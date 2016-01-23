@@ -12,19 +12,22 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var recipes = [Recipe]()
-
+    var query: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+        self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        API.search("waffle", handler: { (recipes: [Recipe]?) -> () in
-            if let recipes = recipes {
-                self.recipes = recipes
-                self.tableView.reloadData()
-            }
-        })
+        if let query = query {
+            API.search(query, handler: { (recipes: [Recipe]?) -> () in
+                if let recipes = recipes {
+                    self.recipes = recipes
+                    self.tableView.reloadData()
+                }
+            })
+            
+        }
     }
 
     override func viewWillAppear(animated: Bool) {
