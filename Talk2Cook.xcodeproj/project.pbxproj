@@ -17,6 +17,13 @@
 		550B27371C53196200386831 /* Talk2CookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550B27361C53196200386831 /* Talk2CookUITests.swift */; };
 		550B27451C53402A00386831 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550B27441C53402A00386831 /* API.swift */; };
 		966E7D97A814B3CBF6DC8643 /* Pods_Talk2Cook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC34E2C5EBFA1FD517BA47A7 /* Pods_Talk2Cook.framework */; };
+		FBC591221C534A1600E5F408 /* libHoundSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBC591211C534A1600E5F408 /* libHoundSDK.a */; };
+		FBC591241C534A2300E5F408 /* HoundSDK.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBC591231C534A2300E5F408 /* HoundSDK.xcassets */; };
+		FBC591261C534DA700E5F408 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBC591251C534DA700E5F408 /* AVFoundation.framework */; };
+		FBC591281C534DAE00E5F408 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBC591271C534DAE00E5F408 /* AudioToolbox.framework */; };
+		FBC5912A1C534DB500E5F408 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBC591291C534DB500E5F408 /* Accelerate.framework */; };
+		FBC5912C1C53513D00E5F408 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FBC5912B1C53513D00E5F408 /* libz.1.dylib */; };
+		FBC5912E1C53529E00E5F408 /* libc++.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FBC5912D1C53529E00E5F408 /* libc++.1.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +61,14 @@
 		550B27381C53196200386831 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		550B27441C53402A00386831 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		66952E8823F280319B503425 /* Pods-Talk2Cook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talk2Cook.release.xcconfig"; path = "Pods/Target Support Files/Pods-Talk2Cook/Pods-Talk2Cook.release.xcconfig"; sourceTree = "<group>"; };
+		FBC591211C534A1600E5F408 /* libHoundSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libHoundSDK.a; path = HoundSDK/libHoundSDK.a; sourceTree = SOURCE_ROOT; };
+		FBC591231C534A2300E5F408 /* HoundSDK.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = HoundSDK.xcassets; path = HoundSDK/HoundSDK.xcassets; sourceTree = SOURCE_ROOT; };
+		FBC591251C534DA700E5F408 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FBC591271C534DAE00E5F408 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		FBC591291C534DB500E5F408 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		FBC5912B1C53513D00E5F408 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
+		FBC5912D1C53529E00E5F408 /* libc++.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.1.dylib"; path = "../../../../usr/lib/libc++.1.dylib"; sourceTree = "<group>"; };
+		FBC5912F1C5357C400E5F408 /* Talk2Cook-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Talk2Cook-Bridging-Header.h"; sourceTree = "<group>"; };
 		FC34E2C5EBFA1FD517BA47A7 /* Pods_Talk2Cook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Talk2Cook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -62,7 +77,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBC5912E1C53529E00E5F408 /* libc++.1.dylib in Frameworks */,
+				FBC5912C1C53513D00E5F408 /* libz.1.dylib in Frameworks */,
+				FBC5912A1C534DB500E5F408 /* Accelerate.framework in Frameworks */,
+				FBC591281C534DAE00E5F408 /* AudioToolbox.framework in Frameworks */,
+				FBC591261C534DA700E5F408 /* AVFoundation.framework in Frameworks */,
 				966E7D97A814B3CBF6DC8643 /* Pods_Talk2Cook.framework in Frameworks */,
+				FBC591221C534A1600E5F408 /* libHoundSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +107,12 @@
 		10D8A52C542F9B57826F2FDB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FBC5912D1C53529E00E5F408 /* libc++.1.dylib */,
+				FBC5912B1C53513D00E5F408 /* libz.1.dylib */,
+				FBC591291C534DB500E5F408 /* Accelerate.framework */,
+				FBC591271C534DAE00E5F408 /* AudioToolbox.framework */,
+				FBC591251C534DA700E5F408 /* AVFoundation.framework */,
+				FBC591211C534A1600E5F408 /* libHoundSDK.a */,
 				FC34E2C5EBFA1FD517BA47A7 /* Pods_Talk2Cook.framework */,
 			);
 			name = Frameworks;
@@ -125,8 +152,10 @@
 		550B27131C53196200386831 /* Talk2Cook */ = {
 			isa = PBXGroup;
 			children = (
+				FBC591231C534A2300E5F408 /* HoundSDK.xcassets */,
 				550B27141C53196200386831 /* AppDelegate.swift */,
 				550B27161C53196200386831 /* MasterViewController.swift */,
+				FBC5912F1C5357C400E5F408 /* Talk2Cook-Bridging-Header.h */,
 				550B27181C53196200386831 /* DetailViewController.swift */,
 				550B27441C53402A00386831 /* API.swift */,
 				550B271A1C53196200386831 /* Main.storyboard */,
@@ -264,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				550B27211C53196200386831 /* LaunchScreen.storyboard in Resources */,
+				FBC591241C534A2300E5F408 /* HoundSDK.xcassets in Resources */,
 				550B271E1C53196200386831 /* Assets.xcassets in Resources */,
 				550B271C1C53196200386831 /* Main.storyboard in Resources */,
 			);
@@ -486,11 +516,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"HEADER_SEARCH_PATHS[arch=*]" = HoundSDK/include;
 				INFOPLIST_FILE = Talk2Cook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HoundSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.talk2cook.Talk2Cook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Talk2Cook-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -501,11 +537,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"HEADER_SEARCH_PATHS[arch=*]" = HoundSDK/include;
 				INFOPLIST_FILE = Talk2Cook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HoundSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.talk2cook.Talk2Cook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Talk2Cook-Bridging-Header.h";
 			};
 			name = Release;
 		};
