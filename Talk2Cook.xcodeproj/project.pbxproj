@@ -526,7 +526,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.talk2cook.Talk2Cook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Talk2Cook-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Talk2Cook/Talk2Cook-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -547,7 +547,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.talk2cook.Talk2Cook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Talk2Cook-Bridging-Header.h";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Talk2Cook/Talk2Cook-Bridging-Header.h";
 			};
 			name = Release;
 		};
