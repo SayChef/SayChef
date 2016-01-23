@@ -9,11 +9,17 @@
 import UIKit
 
 struct Recipe {
+    
+    init(identifier: String, name: String) {
+        self.identifier = identifier
+        self.name = name
+    }
+    
     // Search result content
     let identifier: String
     let name: String
     
     // Recipe details
     var didLoadFullRecipe = false
-    var image: NSURL
+    var image: NSURL? = nil
 }
