@@ -21,5 +21,5 @@ struct Recipe {
     
     // Recipe details
     var didLoadFullRecipe = false
-    var image: NSURL? = nil
+    var imageUrl: String? = nil
 }

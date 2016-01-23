@@ -58,4 +58,27 @@ class API: NSObject {
         }
     }
     
+    class func loadRecipe(var recipe: Recipe, handler: Recipe -> ()) {
+        if recipe.didLoadFullRecipe == false {
+            guard let appId = self.appId, let appKey = self.appKey else { return }
+            
+            let url = "https://api.yummly.com/v1/api/recipe/" + recipe.identifier
+            Alamofire.request(.GET, url, parameters: ["_app_id": appId, "_app_key": appKey])
+                .validate()
+                .responseJSON { response in
+                    recipe.didLoadFullRecipe = true
+                    
+                    if let JSON = response.result.value {
+                        let imageURLs = JSON["images"] as! [[String: AnyObject]]
+                        let imageUrlsBySize = imageURLs[0]["imageUrlsBySize"]
+                        if let imageUrlsBySize = imageUrlsBySize {
+                            recipe.imageUrl = imageUrlsBySize["360"] as? String
+                        }
+                    }
+                    handler(recipe)
+            }
+        }
+        
+    }
+    
 }
