@@ -87,3 +87,6 @@ Carthage/Build
 fastlane/report.xml
 fastlane/screenshots
 
+# Configuration contains private information
+# See Configuration.plist.example for an example
+Configuration.plist

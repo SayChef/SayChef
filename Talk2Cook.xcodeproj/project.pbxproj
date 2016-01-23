@@ -17,6 +17,7 @@
 		550B27371C53196200386831 /* Talk2CookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550B27361C53196200386831 /* Talk2CookUITests.swift */; };
 		550B27451C53402A00386831 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550B27441C53402A00386831 /* API.swift */; };
 		550B27481C53512A00386831 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550B27471C53512A00386831 /* Recipe.swift */; };
+		550B274B1C5362CB00386831 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 550B274A1C5362CB00386831 /* Configuration.plist */; };
 		966E7D97A814B3CBF6DC8643 /* Pods_Talk2Cook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC34E2C5EBFA1FD517BA47A7 /* Pods_Talk2Cook.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		550B27381C53196200386831 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		550B27441C53402A00386831 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		550B27471C53512A00386831 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Recipe.swift; path = Model/Recipe.swift; sourceTree = "<group>"; };
+		550B274A1C5362CB00386831 /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
 		66952E8823F280319B503425 /* Pods-Talk2Cook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talk2Cook.release.xcconfig"; path = "Pods/Target Support Files/Pods-Talk2Cook/Pods-Talk2Cook.release.xcconfig"; sourceTree = "<group>"; };
 		FC34E2C5EBFA1FD517BA47A7 /* Pods_Talk2Cook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Talk2Cook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -134,8 +136,7 @@
 				550B27461C53508100386831 /* Model */,
 				550B271A1C53196200386831 /* Main.storyboard */,
 				550B271D1C53196200386831 /* Assets.xcassets */,
-				550B271F1C53196200386831 /* LaunchScreen.storyboard */,
-				550B27221C53196200386831 /* Info.plist */,
+				550B27491C53621D00386831 /* Supporting Files */,
 			);
 			path = Talk2Cook;
 			sourceTree = "<group>";
@@ -164,6 +165,16 @@
 				550B27471C53512A00386831 /* Recipe.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		550B27491C53621D00386831 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				550B271F1C53196200386831 /* LaunchScreen.storyboard */,
+				550B27221C53196200386831 /* Info.plist */,
+				550B274A1C5362CB00386831 /* Configuration.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				550B27211C53196200386831 /* LaunchScreen.storyboard in Resources */,
+				550B274B1C5362CB00386831 /* Configuration.plist in Resources */,
 				550B271E1C53196200386831 /* Assets.xcassets in Resources */,
 				550B271C1C53196200386831 /* Main.storyboard in Resources */,
 			);
