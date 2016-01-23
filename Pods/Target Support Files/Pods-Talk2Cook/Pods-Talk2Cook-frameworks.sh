@@ -85,7 +85,9 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Talk2Cook/Alamofire.framework"
+  install_framework "Pods-Talk2Cook/AlamofireImage.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Talk2Cook/Alamofire.framework"
+  install_framework "Pods-Talk2Cook/AlamofireImage.framework"
 fi

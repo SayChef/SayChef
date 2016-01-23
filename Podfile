@@ -5,6 +5,7 @@ use_frameworks!
 
 target 'Talk2Cook' do
   pod 'Alamofire', '~> 3.0'
+  pod 'AlamofireImage', '~> 2.0'
 end
 
 target 'Talk2CookTests' do
