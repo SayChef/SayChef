@@ -1,0 +1,6 @@
+framework module Pods_Talk2Cook {
+  umbrella header "Pods-Talk2Cook-umbrella.h"
+
+  export *
+  module * { export * }
+}
