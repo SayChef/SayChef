@@ -23,7 +23,7 @@
         <!--Master-->
         <scene sceneID="smW-Zh-WAh">
             <objects>
-                <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="Talk2Cook" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="SearchResultsViewController" customModule="Talk2Cook" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,13 +57,13 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" title="Search Results" id="Zdf-7t-Un8"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="685" y="-611"/>
         </scene>
-        <!--Search View Controller-->
+        <!--Search-->
         <scene sceneID="UpB-DF-CXo">
             <objects>
                 <viewController id="dwY-Sb-49Y" customClass="SearchViewController" customModule="Talk2Cook" customModuleProvider="target" sceneMemberID="viewController">
@@ -99,7 +99,7 @@
                             <constraint firstItem="S7F-rJ-GwZ" firstAttribute="top" secondItem="rcg-P0-5AW" secondAttribute="bottom" constant="30" id="pQE-nE-em8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Cb3-QB-Vmw"/>
+                    <navigationItem key="navigationItem" title="Search" id="Cb3-QB-Vmw"/>
                     <connections>
                         <outlet property="searchField" destination="rcg-P0-5AW" id="pd6-7q-H35"/>
                     </connections>
@@ -108,10 +108,10 @@
             </objects>
             <point key="canvasLocation" x="-138" y="-537"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Recipe-->
         <scene sceneID="0d6-1c-4Ub">
             <objects>
-                <viewController id="fCC-CW-Fjp" customClass="DetailViewController" customModule="Talk2Cook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fCC-CW-Fjp" customClass="RecipeViewController" customModule="Talk2Cook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hPP-je-sHA"/>
                         <viewControllerLayoutGuide type="bottom" id="OpO-Im-x0D"/>
@@ -133,6 +133,7 @@
                             <constraint firstItem="znx-3E-h5X" firstAttribute="centerY" secondItem="J38-i1-SMK" secondAttribute="centerY" id="GsA-Y0-6TO"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Recipe" id="QfK-Xj-Odq"/>
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="znx-3E-h5X" id="dVo-2N-Nqu"/>
                     </connections>

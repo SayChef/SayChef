@@ -31,7 +31,7 @@ class SearchViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "showSearchResults" {
-            let controller = segue.destinationViewController as! MasterViewController
+            let controller = segue.destinationViewController as! SearchResultsViewController
             controller.query = searchField.text
             searchField.text = nil
         }

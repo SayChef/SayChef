@@ -8,9 +8,9 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController {
+class SearchResultsViewController: UITableViewController {
 
-    var detailViewController: DetailViewController? = nil
+    var detailViewController: RecipeViewController? = nil
     var recipes = [Recipe]()
     var query: String?
 
@@ -45,7 +45,7 @@ class MasterViewController: UITableViewController {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let recipe = recipes[indexPath.row]
-                let controller = segue.destinationViewController as! DetailViewController
+                let controller = segue.destinationViewController as! RecipeViewController
                 controller.detailItem = recipe
             }
         }

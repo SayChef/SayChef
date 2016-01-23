@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		550B27151C53196200386831 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550B27141C53196200386831 /* AppDelegate.swift */; };
-		550B27171C53196200386831 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550B27161C53196200386831 /* MasterViewController.swift */; };
-		550B27191C53196200386831 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550B27181C53196200386831 /* DetailViewController.swift */; };
+		550B27171C53196200386831 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550B27161C53196200386831 /* SearchResultsViewController.swift */; };
+		550B27191C53196200386831 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550B27181C53196200386831 /* RecipeViewController.swift */; };
 		550B271C1C53196200386831 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 550B271A1C53196200386831 /* Main.storyboard */; };
 		550B271E1C53196200386831 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 550B271D1C53196200386831 /* Assets.xcassets */; };
 		550B27211C53196200386831 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 550B271F1C53196200386831 /* LaunchScreen.storyboard */; };
@@ -43,8 +43,8 @@
 		42F76C81E9657CA279798ED5 /* Pods-Talk2Cook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talk2Cook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Talk2Cook/Pods-Talk2Cook.debug.xcconfig"; sourceTree = "<group>"; };
 		550B27111C53196200386831 /* Talk2Cook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Talk2Cook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		550B27141C53196200386831 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		550B27161C53196200386831 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		550B27181C53196200386831 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		550B27161C53196200386831 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		550B27181C53196200386831 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		550B271B1C53196200386831 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		550B271D1C53196200386831 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		550B27201C53196200386831 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -133,8 +133,8 @@
 			children = (
 				550B27141C53196200386831 /* AppDelegate.swift */,
 				550B274C1C538D7C00386831 /* SearchViewController.swift */,
-				550B27161C53196200386831 /* MasterViewController.swift */,
-				550B27181C53196200386831 /* DetailViewController.swift */,
+				550B27161C53196200386831 /* SearchResultsViewController.swift */,
+				550B27181C53196200386831 /* RecipeViewController.swift */,
 				550B27441C53402A00386831 /* API.swift */,
 				550B27461C53508100386831 /* Model */,
 				550B271A1C53196200386831 /* Main.storyboard */,
@@ -365,8 +365,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				550B274D1C538D7C00386831 /* SearchViewController.swift in Sources */,
-				550B27191C53196200386831 /* DetailViewController.swift in Sources */,
-				550B27171C53196200386831 /* MasterViewController.swift in Sources */,
+				550B27191C53196200386831 /* RecipeViewController.swift in Sources */,
+				550B27171C53196200386831 /* SearchResultsViewController.swift in Sources */,
 				550B27451C53402A00386831 /* API.swift in Sources */,
 				550B27151C53196200386831 /* AppDelegate.swift in Sources */,
 				550B27481C53512A00386831 /* Recipe.swift in Sources */,
