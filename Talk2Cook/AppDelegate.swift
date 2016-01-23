@@ -12,9 +12,33 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
+    //This is to call in the Houndify dictionary and pull in the client ID and KEY
+    var clientId: String? {
+        get {
+            guard let path = NSBundle.mainBundle().pathForResource("Configuration", ofType: "plist"), let configuration = NSDictionary(contentsOfFile: path) else { return nil }
+            print(configuration);
+            return configuration["Houndify"]?["client id"] as? String
+        }
+    }
+    
+    var clientKey: String? {
+        get {
+            guard let path = NSBundle.mainBundle().pathForResource("Configuration", ofType: "plist"), let configuration = NSDictionary(contentsOfFile: path) else { return nil }
+            
+            return configuration["Houndify"]?["client key"] as? String
+        }
+    }
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        if let clientIDcheck = clientId, let clientKeycheck = clientKey {
+            //Reference code from SDK documentation
+            //[Hound setClientID:@"<INSERT YOUR CLIENT ID>"];
+            //[Hound setClientKey:@"<INSERT YOUR CLIENT KEY>"];
+            Hound.setClientID(clientIDcheck)
+            Hound.setClientKey(clientKeycheck)
+        }
+        
         return true
     }
 
