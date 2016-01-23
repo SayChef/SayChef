@@ -15,6 +15,7 @@
 		550B27211C53196200386831 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 550B271F1C53196200386831 /* LaunchScreen.storyboard */; };
 		550B272C1C53196200386831 /* Talk2CookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550B272B1C53196200386831 /* Talk2CookTests.swift */; };
 		550B27371C53196200386831 /* Talk2CookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550B27361C53196200386831 /* Talk2CookUITests.swift */; };
+		550B27451C53402A00386831 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550B27441C53402A00386831 /* API.swift */; };
 		966E7D97A814B3CBF6DC8643 /* Pods_Talk2Cook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC34E2C5EBFA1FD517BA47A7 /* Pods_Talk2Cook.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		550B27321C53196200386831 /* Talk2CookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Talk2CookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		550B27361C53196200386831 /* Talk2CookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talk2CookUITests.swift; sourceTree = "<group>"; };
 		550B27381C53196200386831 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		550B27441C53402A00386831 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		66952E8823F280319B503425 /* Pods-Talk2Cook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talk2Cook.release.xcconfig"; path = "Pods/Target Support Files/Pods-Talk2Cook/Pods-Talk2Cook.release.xcconfig"; sourceTree = "<group>"; };
 		FC34E2C5EBFA1FD517BA47A7 /* Pods_Talk2Cook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Talk2Cook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -126,6 +128,7 @@
 				550B27141C53196200386831 /* AppDelegate.swift */,
 				550B27161C53196200386831 /* MasterViewController.swift */,
 				550B27181C53196200386831 /* DetailViewController.swift */,
+				550B27441C53402A00386831 /* API.swift */,
 				550B271A1C53196200386831 /* Main.storyboard */,
 				550B271D1C53196200386831 /* Assets.xcassets */,
 				550B271F1C53196200386831 /* LaunchScreen.storyboard */,
@@ -337,6 +340,7 @@
 			files = (
 				550B27191C53196200386831 /* DetailViewController.swift in Sources */,
 				550B27171C53196200386831 /* MasterViewController.swift in Sources */,
+				550B27451C53402A00386831 /* API.swift in Sources */,
 				550B27151C53196200386831 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
