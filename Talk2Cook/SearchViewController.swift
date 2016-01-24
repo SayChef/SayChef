@@ -22,6 +22,8 @@ class SearchViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.searchField.text = nil
+        
         let notificationCenter = NSNotificationCenter.defaultCenter()
         
         notificationCenter.addObserver(self, selector: "updateState", name: HoundVoiceSearchStateChangeNotification, object: nil)
@@ -105,6 +107,11 @@ class SearchViewController: UIViewController {
                         let nativeData = commandResult?["NativeData"]
                         
                         print("NativeData: \(nativeData)")
+                        
+                        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let searchViewController = mainStoryboard.instantiateViewControllerWithIdentifier("searchResults") as! SearchResultsViewController
+                        searchViewController.query = "apple pie"
+                        self.navigationController?.pushViewController(searchViewController, animated: true)
                     }
                 }
             }
