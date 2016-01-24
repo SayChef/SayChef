@@ -13,12 +13,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     var window: UIWindow?
 
-
+    var clientId: String? {
+        get {
+            guard let path = NSBundle.mainBundle().pathForResource("Configuration", ofType: "plist"), let configuration = NSDictionary(contentsOfFile: path) else { return nil }
+            
+            return configuration["Hound"]?["client id"] as? String
+        }
+    }
+    
+    var clientKey: String? {
+        get {
+            guard let path = NSBundle.mainBundle().pathForResource("Configuration", ofType: "plist"), let configuration = NSDictionary(contentsOfFile: path) else { return nil }
+            
+            return configuration["Hound"]?["client key"] as? String
+        }
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-                
+        
+        // Remove line between navigation bar and content
         UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarPosition: .Any, barMetrics: .Default)
         UINavigationBar.appearance().shadowImage = UIImage()
-                
+        
+        // Set up HoundSDK
+        if let clientId = clientId, let clientKey = clientKey {
+            Hound.setClientID(clientId)
+            Hound.setClientKey(clientKey)
+        }
+        
         return true
     }
 
