@@ -11,11 +11,51 @@ import UIKit
 class SearchViewController: UIViewController {
 
     @IBOutlet weak var searchField: UITextField!
+    @IBOutlet weak var microphoneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        
+        notificationCenter.addObserver(self, selector: "updateState", name: HoundVoiceSearchStateChangeNotification, object: nil)
+        notificationCenter.addObserver(self, selector: "hotPhrase", name: HoundVoiceSearchHotPhraseNotification, object: nil)
+        
+        HoundVoiceSearch.instance().startListeningWithCompletionHandler {
+            error in
+            dispatch_async(dispatch_get_main_queue()) {
+//                self.microphoneButton.selected = true
+                
+                if let error = error {
+                    self.searchField.placeholder = error.localizedDescription
+                }
+            }
+        }
+        
+        updateState()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+        
+        HoundVoiceSearch.instance().stopListeningWithCompletionHandler {
+            error in
+            dispatch_async(dispatch_get_main_queue()) {
+//                self.microphoneButton.selected = false
+                
+                if let error = error {
+                    self.searchField.placeholder = error.localizedDescription
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,4 +77,63 @@ class SearchViewController: UIViewController {
         }
     }
 
+    // MARK: - HoundSDK
+    
+    let voiceSearchEndPoint = "https://api.houndify.com/v1/audio"
+    
+    func startSearch() {
+        self.searchField.text = nil
+        
+        HoundVoiceSearch.instance().startSearchWithRequestInfo(nil, endPointURL: NSURL(string: voiceSearchEndPoint)) {
+            error, responseType, response, dictionary in
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                if let error = error {
+                    self.searchField.placeholder = error.localizedDescription
+                } else {
+                    if responseType == .PartialTranscription {
+                        // Handle partial transcription
+                        
+                        let partialTranscript = response as? HoundDataPartialTranscript
+                        
+                        self.searchField.text = partialTranscript?.partialTranscript
+                    } else if responseType == .HoundServer {
+                        // JSON is in `dictionary`
+                        
+                        let houndServer = response as? HoundDataHoundServer
+                        let commandResult = houndServer?.allResults.firstObject()
+                        let nativeData = commandResult?["NativeData"]
+                        
+                        print("NativeData: \(nativeData)")
+                    }
+                }
+            }
+        }
+    }
+    
+    func updateState() {
+        switch HoundVoiceSearch.instance().state {
+        case .None:
+            self.microphoneButton.selected = false
+            self.searchField.placeholder = "Not Ready"
+        case .Ready:
+            self.microphoneButton.selected = false
+            self.searchField.placeholder = "Say 'OK Hound'"
+        case .Recording:
+            self.microphoneButton.selected = true
+            self.searchField.placeholder = "Recording"
+        case .Searching:
+            self.microphoneButton.selected = true
+            self.searchField.placeholder = "Searching"
+        case .Speaking:
+            self.microphoneButton.selected = true
+            self.searchField.placeholder = "Speaking"
+        }
+    }
+    
+    func hotPhrase() {
+        self.startSearch()
+    }
+    
+    
 }
