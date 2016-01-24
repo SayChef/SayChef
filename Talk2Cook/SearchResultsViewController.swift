@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchResultsViewController: UITableViewController {
+class SearchResultsViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     var detailViewController: RecipeViewController? = nil
     var recipes = [Recipe]()
@@ -17,13 +17,12 @@ class SearchResultsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         if let query = query {
             API.search(query, handler: { (recipes: [Recipe]?) -> () in
                 if let recipes = recipes {
                     self.recipes = recipes
-                    self.tableView.reloadData()
+                    self.collectionView?.reloadData()
                 }
             })
             
@@ -43,7 +42,7 @@ class SearchResultsViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow {
+            if let indexPath = self.collectionView?.indexPathForCell(sender as! UICollectionViewCell) {
                 let recipe = recipes[indexPath.row]
                 let controller = segue.destinationViewController as! RecipeViewController
                 controller.detailItem = recipe
@@ -51,38 +50,38 @@ class SearchResultsViewController: UITableViewController {
         }
     }
 
-    // MARK: - Table View
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    // MARK: - Collection view
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return recipes.count
     }
-
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-
-        let object = recipes[indexPath.row]
-        cell.textLabel!.text = object.name
+    
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("recipeCell", forIndexPath: indexPath) as! RecipeCollectionViewCell
+        
+        let recipe = recipes[indexPath.item]
+        cell.recipe = recipe
+        
         return cell
     }
-
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    // MARK: - Collection view Delegate Layout
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let screenSize = UIScreen.mainScreen().bounds.size
+        return CGSize(width: (screenSize.width / 2), height: (screenSize.height / 3))
     }
-
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            recipes.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-        }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
-
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 0
+    }
 
 }
 

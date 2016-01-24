@@ -19,6 +19,7 @@
 		550B27481C53512A00386831 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550B27471C53512A00386831 /* Recipe.swift */; };
 		550B274B1C5362CB00386831 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 550B274A1C5362CB00386831 /* Configuration.plist */; };
 		550B274D1C538D7C00386831 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550B274C1C538D7C00386831 /* SearchViewController.swift */; };
+		553B7B4B1C545A1900A91923 /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553B7B4A1C545A1900A91923 /* RecipeCollectionViewCell.swift */; };
 		966E7D97A814B3CBF6DC8643 /* Pods_Talk2Cook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC34E2C5EBFA1FD517BA47A7 /* Pods_Talk2Cook.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		550B27471C53512A00386831 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Recipe.swift; path = Model/Recipe.swift; sourceTree = "<group>"; };
 		550B274A1C5362CB00386831 /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
 		550B274C1C538D7C00386831 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		553B7B4A1C545A1900A91923 /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
 		66952E8823F280319B503425 /* Pods-Talk2Cook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Talk2Cook.release.xcconfig"; path = "Pods/Target Support Files/Pods-Talk2Cook/Pods-Talk2Cook.release.xcconfig"; sourceTree = "<group>"; };
 		FC34E2C5EBFA1FD517BA47A7 /* Pods_Talk2Cook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Talk2Cook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -136,6 +138,7 @@
 				550B27161C53196200386831 /* SearchResultsViewController.swift */,
 				550B27181C53196200386831 /* RecipeViewController.swift */,
 				550B27441C53402A00386831 /* API.swift */,
+				553B7B491C5459CF00A91923 /* Cells */,
 				550B27461C53508100386831 /* Model */,
 				550B271A1C53196200386831 /* Main.storyboard */,
 				550B271D1C53196200386831 /* Assets.xcassets */,
@@ -178,6 +181,14 @@
 				550B274A1C5362CB00386831 /* Configuration.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		553B7B491C5459CF00A91923 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				553B7B4A1C545A1900A91923 /* RecipeCollectionViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,6 +379,7 @@
 				550B27191C53196200386831 /* RecipeViewController.swift in Sources */,
 				550B27171C53196200386831 /* SearchResultsViewController.swift in Sources */,
 				550B27451C53402A00386831 /* API.swift in Sources */,
+				553B7B4B1C545A1900A91923 /* RecipeCollectionViewCell.swift in Sources */,
 				550B27151C53196200386831 /* AppDelegate.swift in Sources */,
 				550B27481C53512A00386831 /* Recipe.swift in Sources */,
 			);
