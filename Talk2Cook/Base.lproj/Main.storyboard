@@ -90,19 +90,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uls-Qb-K00">
-                                <rect key="frame" x="221" y="373" width="159" height="105"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uls-Qb-K00">
+                                <rect key="frame" x="221" y="411" width="159" height="105"/>
                                 <state key="normal" title="Button" image="chef"/>
                                 <connections>
                                     <action selector="search:" destination="dwY-Sb-49Y" eventType="touchUpInside" id="qAq-5T-OnC"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STATUS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TH6-2E-2Tx">
+                                <rect key="frame" x="269" y="93" width="63" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rcg-P0-5AW" firstAttribute="top" secondItem="lz0-Rn-G12" secondAttribute="bottom" constant="161" id="5DX-o2-cOi"/>
                             <constraint firstItem="uls-Qb-K00" firstAttribute="top" secondItem="S7F-rJ-GwZ" secondAttribute="bottom" constant="96" id="JFJ-7s-XXa"/>
                             <constraint firstItem="rcg-P0-5AW" firstAttribute="centerX" secondItem="Fwm-gb-piY" secondAttribute="centerX" id="YAY-lh-qxm"/>
+                            <constraint firstItem="rcg-P0-5AW" firstAttribute="top" secondItem="TH6-2E-2Tx" secondAttribute="bottom" constant="111" id="emJ-6P-J6d"/>
+                            <constraint firstItem="TH6-2E-2Tx" firstAttribute="centerX" secondItem="Fwm-gb-piY" secondAttribute="centerX" id="jr8-g4-3IE"/>
                             <constraint firstItem="S7F-rJ-GwZ" firstAttribute="centerX" secondItem="Fwm-gb-piY" secondAttribute="centerX" id="k0O-al-V7e"/>
                             <constraint firstItem="uls-Qb-K00" firstAttribute="centerX" secondItem="Fwm-gb-piY" secondAttribute="centerX" id="onQ-2H-cjb"/>
                             <constraint firstItem="S7F-rJ-GwZ" firstAttribute="top" secondItem="rcg-P0-5AW" secondAttribute="bottom" constant="30" id="pQE-nE-em8"/>
@@ -110,7 +118,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="Cb3-QB-Vmw"/>
                     <connections>
+                        <outlet property="searchButton" destination="S7F-rJ-GwZ" id="rF7-27-1w7"/>
                         <outlet property="searchField" destination="rcg-P0-5AW" id="pd6-7q-H35"/>
+                        <outlet property="status" destination="TH6-2E-2Tx" id="pm5-bZ-I9U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d5M-vm-RkH" userLabel="First Responder" sceneMemberID="firstResponder"/>
